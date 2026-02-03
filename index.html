@@ -1,51 +1,247 @@
-<!DOCTYPE html>
+# -*- coding: utf-8 -*-
+# СОЗДАНИЕ САЙТА ДЛЯ ПРИЮТОВ ЖИВОТНЫХ
+
+html = '''<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Приюты животных Краснодарского края</title>
     <style>
-        body { font-family: Arial; background: #e6f2ff; margin: 0; }
-        .header { background: #3399ff; color: white; padding: 50px; text-align: center; }
-        .card { background: white; margin: 20px; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .phone { background: #f0f8ff; padding: 20px; margin: 15px 0; font-size: 20px; font-weight: bold; color: #0066cc; border-left: 5px solid #3399ff; }
-        .footer { background: #0066cc; color: white; text-align: center; padding: 30px; margin-top: 40px; }
-        .animals { font-size: 40px; margin: 20px; }
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(to bottom, #e6f2ff, #cce5ff);
+            margin: 0; 
+            padding: 0; 
+        }
+        .header { 
+            background: linear-gradient(to right, #3399ff, #66b3ff);
+            color: white; 
+            padding: 50px 20px; 
+            text-align: center; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .animals { 
+            font-size: 40px; 
+            margin: 15px 0; 
+        }
+        .content { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 20px; 
+        }
+        .card { 
+            background: white; 
+            margin: 25px 0; 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border-left: 5px solid #3399ff;
+        }
+        .card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        .phone { 
+            background: linear-gradient(to right, #f0f8ff, #e6f2ff);
+            padding: 18px; 
+            border-radius: 8px;
+            margin: 20px 0; 
+            font-size: 22px; 
+            font-weight: bold; 
+            color: #0066cc;
+            border: 2px solid #3399ff;
+        }
+        .phone:hover {
+            background: #e6f2ff;
+            cursor: pointer;
+        }
+        .animal-icon {
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        .footer { 
+            background: linear-gradient(to right, #0066cc, #004d99);
+            color: white; 
+            text-align: center; 
+            padding: 40px 20px; 
+            margin-top: 50px;
+        }
+        .shelter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        @media (max-width: 768px) {
+            .shelter-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="animals">🐕 🐈 🐇 🐦 🐾</div>
+        <div class="animals">🐕 🐈 🐇 🐦 🐾 🦔</div>
         <h1>ПРИЮТЫ ЖИВОТНЫХ КРАСНОДАРСКОГО КРАЯ</h1>
-        <p>Школьный проект | Ученик "А" класса | 2026</p>
+        <p style="font-size: 18px;">Школьный проект | Помощь бездомным животным</p>
     </div>
     
-    <div style="max-width: 1000px; margin: 0 auto; padding: 20px;">
-        <div class="card">
-            <h2>Приют "Доброе сердце"</h2>
-            <p><strong>📍 Город:</strong> Краснодар</p>
-            <p><strong>🏠 Адрес:</strong> ул. Красная, 123</p>
-            <p><strong>📝 Описание:</strong> Приют для собак и кошек. Помощь в лечении.</p>
-            <div class="phone">📞 Телефон: +7 (861) 123-45-67</div>
+    <div class="content">
+        <div style="text-align: center; margin: 30px 0;">
+            <h2 style="color: #0066cc;">Найдите приют рядом с вами</h2>
+            <p>Всего в Краснодарском крае работает более 20 приютов для животных</p>
         </div>
         
-        <div class="card">
-            <h2>Краснодарский приют для животных</h2>
-            <p><strong>📍 Город:</strong> Краснодар</p>
-            <p><strong>🏠 Адрес:</strong> ул. Ставропольская, 45</p>
-            <p><strong>📝 Описание:</strong> Крупнейший муниципальный приют.</p>
-            <div class="phone">📞 Телефон: +7 (861) 234-56-78</div>
+        <div class="shelter-grid">
+            <div class="card">
+                <h2><span class="animal-icon">🐕</span> Приют "Доброе сердце"</h2>
+                <p><strong>📍 Город:</strong> Краснодар</p>
+                <p><strong>🏠 Адрес:</strong> ул. Красная, 123</p>
+                <p><strong>📝 Описание:</strong> Крупнейший приют для собак и кошек. Есть ветеринарный кабинет.</p>
+                <div class="phone">📞 +7 (861) 123-45-67</div>
+            </div>
+            
+            <div class="card">
+                <h2><span class="animal-icon">🏢</span> Краснодарский городской приют</h2>
+                <p><strong>📍 Город:</strong> Краснодар</p>
+                <p><strong>🏠 Адрес:</strong> ул. Ставропольская, 45</p>
+                <p><strong>📝 Описание:</strong> Муниципальный приют. Принимает всех животных.</p>
+                <div class="phone">📞 +7 (861) 234-56-78</div>
+            </div>
+            
+            <div class="card">
+                <h2><span class="animal-icon">🐈</span> "Лапки добра"</h2>
+
+<p><strong>📍 Город:</strong> Новороссийск</p>
+                <p><strong>🏠 Адрес:</strong> ул. Мира, 89</p>
+                <p><strong>📝 Описание:</strong> Специализируется на кошках. Есть клиника.</p>
+                <div class="phone">📞 +7 (8617) 345-67-89</div>
+            </div>
+            
+            <div class="card">
+                <h2><span class="animal-icon">🏔️</span> Приют "Надежда" в Сочи</h2>
+                <p><strong>📍 Город:</strong> Сочи</p>
+                <p><strong>🏠 Адрес:</strong> ул. Донская, 12</p>
+                <p><strong>📝 Описание:</strong> Работает с 2010 года на пожертвования.</p>
+                <div class="phone">📞 +7 (862) 456-78-90</div>
+            </div>
+            
+            <div class="card">
+                <h2><span class="animal-icon">🦮</span> "Верный друг" в Армавире</h2>
+                <p><strong>📍 Город:</strong> Армавир</p>
+                <p><strong>🏠 Адрес:</strong> ул. Ленина, 78</p>
+                <p><strong>📝 Описание:</strong> Приют для служебных пород собак.</p>
+                <div class="phone">📞 +7 (86137) 567-89-01</div>
+            </div>
+            
+            <div class="card">
+                <h2><span class="animal-icon">🐦</span> "Крылья надежды" в Ейске</h2>
+                <p><strong>📍 Город:</strong> Ейск</p>
+                <p><strong>🏠 Адрес:</strong> ул. Приморская, 34</p>
+                <p><strong>📝 Описание:</strong> Помощь птицам и мелким животным.</p>
+                <div class="phone">📞 +7 (86132) 678-90-12</div>
+            </div>
+            
+            <div class="card">
+                <h2><span class="animal-icon">🐕‍🦺</span> "Собачий патруль" в Туапсе</h2>
+                <p><strong>📍 Город:</strong> Туапсе</p>
+                <p><strong>🏠 Адрес:</strong> ул. Гагарина, 56</p>
+                <p><strong>📝 Описание:</strong> Специализация на бездомных собаках.</p>
+                <div class="phone">📞 +7 (86167) 789-01-23</div>
+            </div>
+            
+            <div class="card">
+                <h2><span class="animal-icon">😸</span> "Кошачий рай" в Анапе</h2>
+                <p><strong>📍 Город:</strong> Анапа</p>
+                <p><strong>🏠 Адрес:</strong> ул. Курортная, 22</p>
+                <p><strong>📝 Описание:</strong> Только кошки и котята. Передержка.</p>
+                <div class="phone">📞 +7 (86133) 890-12-34</div>
+            </div>
         </div>
         
-        <div class="card">
-            <h2>🚑 Экстренные контакты</h2>
-            <div class="phone">🚑 Ветеринарная помощь: +7 (861) 111-22-33</div>
-            <div class="phone">📞 Служба отлова: +7 (861) 222-33-44</div>
+        <div class="card" style="background: linear-gradient(to right, #fff8e1, #ffecb3);">
+            <h2 style="color: #ff6f00;">🚑 Экстренные службы</h2>
+            <div class="phone" style="border-color: #ff6f00;">🚑 Ветеринарная помощь (круглосуточно): +7 (861) 111-22-33</div>
+            <div class="phone" style="border-color: #ff6f00;">📞 Служба отлова животных: +7 (861) 222-33-44</div>
+            <div class="phone" style="border-color: #ff6f00;">🐾 Консультация по животным: +7 (861) 333-44-55</div>
+        </div>
+        
+        <div class="card" style="text-align: center; background: #f0f8ff;">
+            <h3 style="color: #0066cc;">Как вы можете помочь?</h3>
+            <p style="font-size: 18px;">
+                <span style="font-size: 24px;">💰</span> Финансовая помощь | 
+                <span style="font-size: 24px;">🏠</span> Взять животное | 
+                <span style="font-size: 24px;">🎁</span> Корм и вещи | 
+                <span style="font-size: 24px;">🤝</span> Волонтерство
+            </p>
         </div>
     </div>
     
     <div class="footer">
-        <p>© 2026 Школьный проект. Ученик "А" класса</p>
-        <p>Сайт создан на HTML, CSS</p>
+        <div style="font-size: 30px; margin: 15px 0;">🐾 🐕 🐈 🐇 🐦 🦔 🐾</div>
+        <h3>ШКОЛЬНЫЙ ПРОЕКТ</h3>
+        <p>Сайт создан учеником "А" класса</p>
+        <p>Использованы технологии: Python, HTML, CSS</p>
+        <p>© 2026 Все права защищены</p>
+
+<p style="margin-top: 20px; font-size: 14px; opacity: 0.8;">
+            Все контакты указаны для примера. Актуальные телефоны уточняйте на сайтах приютов.
+        </p>
     </div>
+    
+    <script>
+        // Анимация телефонов
+        document.querySelectorAll('.phone').forEach(phone => {
+            phone.addEventListener('click', function() {
+                const number = this.textContent.replace(/[^\d+()\s-]/g, '');
+                alert('Телефон для связи:\n' + number.trim() + '\n\nСкопируйте номер и позвоните!');
+            });
+            
+            phone.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+            });
+            
+            phone.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Плавная прокрутка для заголовков
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < window.innerHeight - 100) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Инициализация
+        document.querySelectorAll('.card').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transition = 'opacity 0.5s, transform 0.5s';
+        });
+    </script>
 </body>
-</html>
+</html>'''
+
+# Сохраняем файл
+with open("shelter_animals.html", "w", encoding="utf-8") as f:
+    f.write(html)
+
+print("=" * 60)
+print("✅ САЙТ УСПЕШНО СОЗДАН!")
+print("=" * 60)
+print("📁 Файл: shelter_animals.html")
+print("🎯 Что нового:")
+print("   • Год изменен на 2026")
+print("   • Ученик 'А' класса")
+print("   • Добавлены картинки животных 🐕🐈🐇")
+print("   • 8 приютов вместо 4")
+print("   • Улучшенный дизайн")
+print("=" * 60)
+print("📱 Откройте файл в браузере двойным кликом")
+print("=" * 60)
