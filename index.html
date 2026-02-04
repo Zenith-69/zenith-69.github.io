@@ -76,9 +76,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: transform 0.2s;
             cursor: pointer;
-            text-decoration: none;
             color: inherit;
-            display: block;
         }
         
         .card:hover {
@@ -105,6 +103,7 @@
             border-left: 3px solid var(--accent);
             font-weight: bold;
             color: var(--primary);
+            cursor: pointer;
         }
         
         .more-info {
@@ -149,30 +148,12 @@
                 padding: 30px 15px;
             }
         }
-
-</style>
+    </style>
 </head>
 <body>
-    <!-- ЗАГРУЗОЧНЫЙ ЭКРАН -->
-    <div id="loader" style="
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: white;
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 24px;
-        color: var(--primary);
-    ">
-        Загрузка приютов... 🐾
-    </div>
-
     <!-- ХЕДЕР -->
-    <div class="header">
+
+<div class="header">
         <div class="animals-icons">🐕 🐈 🐇 🐦 🐾</div>
         <h1>ПРИЮТЫ ЖИВОТНЫХ КРАСНОДАРСКОГО КРАЯ</h1>
         <p>Школьный проект | Помощь бездомным животным</p>
@@ -225,152 +206,152 @@
         <!-- КАРТОЧКИ ВСЕХ ПРИЮТОВ -->
         <div class="shelter-grid">
             <!-- ПРИЮТЫ КРАСНОДАРА -->
-            <a class="card" onclick="showShelterInfo('Доброе сердце', 'Краснодар')">
+            <div class="card" onclick="showShelterModal('Доброе сердце', 'Краснодар', '+7 (861) 123-45-67', 'ул. Красная, 123')">
                 <h3><span class="card-icon">🐕</span> Приют "Доброе сердце"</h3>
                 <p><strong>Город:</strong> Краснодар</p>
                 <p><strong>Адрес:</strong> ул. Красная, 123</p>
                 <p>Крупнейший приют для собак и кошек</p>
                 <div class="phone">📞 +7 (861) 123-45-67</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
-            <a class="card" onclick="showShelterInfo('Краснодарский городской', 'Краснодар')">
+            <div class="card" onclick="showShelterModal('Краснодарский городской', 'Краснодар', '+7 (861) 234-56-78', 'ул. Ставропольская, 45')">
                 <h3><span class="card-icon">🏢</span> Краснодарский городской приют</h3>
                 <p><strong>Город:</strong> Краснодар</p>
                 <p><strong>Адрес:</strong> ул. Ставропольская, 45</p>
                 <p>Муниципальный приют, все животные</p>
                 <div class="phone">📞 +7 (861) 234-56-78</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
-            <a class="card" onclick="showShelterInfo('Ласковый дом', 'Краснодар')">
+            <div class="card" onclick="showShelterModal('Ласковый дом', 'Краснодар', '+7 (861) 345-67-89', 'ул. Северная, 67')">
                 <h3><span class="card-icon">🏡</span> "Ласковый дом"</h3>
                 <p><strong>Город:</strong> Краснодар</p>
                 <p><strong>Адрес:</strong> ул. Северная, 67</p>
                 <p>Частный приют, семейная атмосфера</p>
                 <div class="phone">📞 +7 (861) 345-67-89</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
             <!-- ПРИЮТЫ НОВОРОССИЙСКА -->
-            <a class="card" onclick="showShelterInfo('Лапки добра', 'Новороссийск')">
-
-<h3><span class="card-icon">🐈</span> "Лапки добра"</h3>
+            <div class="card" onclick="showShelterModal('Лапки добра', 'Новороссийск', '+7 (8617) 456-78-90', 'ул. Мира, 89')">
+                <h3><span class="card-icon">🐈</span> "Лапки добра"</h3>
                 <p><strong>Город:</strong> Новороссийск</p>
                 <p><strong>Адрес:</strong> ул. Мира, 89</p>
-                <p>Специализация на кошках, есть клиника</p>
+
+<p>Специализация на кошках, есть клиника</p>
                 <div class="phone">📞 +7 (8617) 456-78-90</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
-            <a class="card" onclick="showShelterInfo('Морской бриз', 'Новороссийск')">
+            <div class="card" onclick="showShelterModal('Морской бриз', 'Новороссийск', '+7 (8617) 567-89-01', 'ул. Набережная, 15')">
                 <h3><span class="card-icon">🌊</span> "Морской бриз"</h3>
                 <p><strong>Город:</strong> Новороссийск</p>
                 <p><strong>Адрес:</strong> ул. Набережная, 15</p>
                 <p>Приют у моря, просторные вольеры</p>
                 <div class="phone">📞 +7 (8617) 567-89-01</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
             <!-- ПРИЮТЫ СОЧИ -->
-            <a class="card" onclick="showShelterInfo('Надежда', 'Сочи')">
+            <div class="card" onclick="showShelterModal('Надежда', 'Сочи', '+7 (862) 456-78-90', 'ул. Донская, 12')">
                 <h3><span class="card-icon">🏔️</span> Приют "Надежда"</h3>
                 <p><strong>Город:</strong> Сочи</p>
                 <p><strong>Адрес:</strong> ул. Донская, 12</p>
                 <p>Работает с 2010 года, горный воздух</p>
                 <div class="phone">📞 +7 (862) 456-78-90</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
-            <a class="card" onclick="showShelterInfo('Сочи-Зоо', 'Сочи')">
+            <div class="card" onclick="showShelterModal('Сочи-Зоо', 'Сочи', '+7 (862) 567-89-01', 'ул. Курортная, 45')">
                 <h3><span class="card-icon">🌴</span> "Сочи-Зоо"</h3>
                 <p><strong>Город:</strong> Сочи</p>
                 <p><strong>Адрес:</strong> ул. Курортная, 45</p>
                 <p>Крупный приют, экологичный подход</p>
                 <div class="phone">📞 +7 (862) 567-89-01</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
             <!-- АРМАВИР -->
-            <a class="card" onclick="showShelterInfo('Верный друг', 'Армавир')">
+            <div class="card" onclick="showShelterModal('Верный друг', 'Армавир', '+7 (86137) 678-90-12', 'ул. Ленина, 78')">
                 <h3><span class="card-icon">🦮</span> "Верный друг"</h3>
                 <p><strong>Город:</strong> Армавир</p>
                 <p><strong>Адрес:</strong> ул. Ленина, 78</p>
                 <p>Служебные породы собак, тренировки</p>
                 <div class="phone">📞 +7 (86137) 678-90-12</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
             <!-- ЕЙСК -->
-            <a class="card" onclick="showShelterInfo('Крылья надежды', 'Ейск')">
+            <div class="card" onclick="showShelterModal('Крылья надежды', 'Ейск', '+7 (86132) 789-01-23', 'ул. Приморская, 34')">
                 <h3><span class="card-icon">🐦</span> "Крылья надежды"</h3>
                 <p><strong>Город:</strong> Ейск</p>
                 <p><strong>Адрес:</strong> ул. Приморская, 34</p>
                 <p>Птицы и мелкие животные, реабилитация</p>
                 <div class="phone">📞 +7 (86132) 789-01-23</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
             <!-- ТУАПСЕ -->
-            <a class="card" onclick="showShelterInfo('Собачий патруль', 'Туапсе')">
+            <div class="card" onclick="showShelterModal('Собачий патруль', 'Туапсе', '+7 (86167) 890-12-34', 'ул. Гагарина, 56')">
                 <h3><span class="card-icon">🐕‍🦺</span> "Собачий патруль"</h3>
                 <p><strong>Город:</strong> Туапсе</p>
                 <p><strong>Адрес:</strong> ул. Гагарина, 56</p>
                 <p>Бездомные собаки, поисковые работы</p>
                 <div class="phone">📞 +7 (86167) 890-12-34</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
             <!-- АНАПА -->
-            <a class="card" onclick="showShelterInfo('Кошачий рай', 'Анапа')">
+            <div class="card" onclick="showShelterModal('Кошачий рай', 'Анапа', '+7 (86133) 901-23-45', 'ул. Курортная, 22')">
                 <h3><span class="card-icon">😸</span> "Кошачий рай"</h3>
-                <p><strong>Город:</strong> Анапа</p>
+
+<p><strong>Город:</strong> Анапа</p>
                 <p><strong>Адрес:</strong> ул. Курортная, 22</p>
                 <p>Только кошки и котята, передержка</p>
                 <div class="phone">📞 +7 (86133) 901-23-45</div>
-
-<div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
             <!-- ГЕЛЕНДЖИК -->
-            <a class="card" onclick="showShelterInfo('Дом для хвостиков', 'Геленджик')">
+            <div class="card" onclick="showShelterModal('Дом для хвостиков', 'Геленджик', '+7 (86141) 012-34-56', 'ул. Туристическая, 56')">
                 <h3><span class="card-icon">🏡</span> "Дом для хвостиков"</h3>
                 <p><strong>Город:</strong> Геленджик</p>
                 <p><strong>Адрес:</strong> ул. Туристическая, 56</p>
                 <p>Семейная атмосфера, щенки и котята</p>
                 <div class="phone">📞 +7 (86141) 012-34-56</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
             <!-- СЛАВЯНСК-НА-КУБАНИ -->
-            <a class="card" onclick="showShelterInfo('Зоозащита Кубани', 'Славянск-на-Кубани')">
+            <div class="card" onclick="showShelterModal('Зоозащита Кубани', 'Славянск-на-Кубани', '+7 (86146) 123-45-67', 'ул. Кубанская, 33')">
                 <h3><span class="card-icon">🐾</span> "Зоозащита Кубани"</h3>
                 <p><strong>Город:</strong> Славянск-на-Кубани</p>
                 <p><strong>Адрес:</strong> ул. Кубанская, 33</p>
                 <p>Региональный центр, стерилизация</p>
                 <div class="phone">📞 +7 (86146) 123-45-67</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
             <!-- КРОПОТКИН -->
-            <a class="card" onclick="showShelterInfo('Лапа помощи', 'Кропоткин')">
+            <div class="card" onclick="showShelterModal('Лапа помощи', 'Кропоткин', '+7 (86138) 234-56-78', 'ул. Центральная, 88')">
                 <h3><span class="card-icon">🤝</span> "Лапа помощи"</h3>
                 <p><strong>Город:</strong> Кропоткин</p>
                 <p><strong>Адрес:</strong> ул. Центральная, 88</p>
                 <p>Волонтерский приют, благотворительность</p>
                 <div class="phone">📞 +7 (86138) 234-56-78</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
             
             <!-- ТИМАШЕВСК -->
-            <a class="card" onclick="showShelterInfo('Хвостатый ангел', 'Тимашевск')">
+            <div class="card" onclick="showShelterModal('Хвостатый ангел', 'Тимашевск', '+7 (86130) 345-67-89', 'ул. Мира, 77')">
                 <h3><span class="card-icon">😇</span> "Хвостатый ангел"</h3>
                 <p><strong>Город:</strong> Тимашевск</p>
                 <p><strong>Адрес:</strong> ул. Мира, 77</p>
                 <p>Пожилые животные, паллиативная помощь</p>
                 <div class="phone">📞 +7 (86130) 345-67-89</div>
-                <div class="more-info">Подробнее →</div>
-            </a>
+                <div class="more-info">Нажмите для подробностей →</div>
+            </div>
         </div>
         
         <!-- КАРТА КРАЯ -->
@@ -399,16 +380,16 @@
         <!-- ЭКСТРЕННЫЕ КОНТАКТЫ -->
         <div class="card" style="background: #fff8e1; border-left: 4px solid #ff9800;">
             <h3 style="color: #ff9800;">🚑 Экстренные службы</h3>
-            <div class="phone" style="border-color: #ff9800;">🚑 Ветеринарная помощь: +7 (861) 111-22-33</div>
-            <div class="phone" style="border-color: #ff9800;">📞 Служба отлова: +7 (861) 222-33-44</div>
-            <div class="phone" style="border-color: #ff9800;">🆘 Консультация: +7 (861) 333-44-55</div>
+
+<div class="phone" onclick="alert('Ветеринарная помощь: +7 (861) 111-22-33')">🚑 Ветеринарная помощь: +7 (861) 111-22-33</div>
+            <div class="phone" onclick="alert('Служба отлова: +7 (861) 222-33-44')">📞 Служба отлова: +7 (861) 222-33-44</div>
+            <div class="phone" onclick="alert('Консультация: +7 (861) 333-44-55')">🆘 Консультация: +7 (861) 333-44-55</div>
         </div>
         
         <!-- КАК ПОМОЧЬ -->
         <div class="card" style="text-align: center; margin-top: 40px;">
             <h3 style="color: var(--primary);">🤝 Как вы можете помочь?</h3>
-
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 20px 0;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 20px 0;">
                 <span style="background: #e3f2fd; padding: 10px 15px; border-radius: 20px;">💰 Финансовая помощь</span>
                 <span style="background: #f3e5f5; padding: 10px 15px; border-radius: 20px;">🏠 Взять животное</span>
                 <span style="background: #e8f5e9; padding: 10px 15px; border-radius: 20px;">🎁 Корм и вещи</span>
@@ -426,175 +407,193 @@
         <p>© 2026 Все права защищены</p>
     </div>
     
-    <!-- МОДАЛЬНОЕ ОКНО -->
-    <div id="modal" style="
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ПОДРОБНОЙ ИНФОРМАЦИИ -->
+    <div id="shelterModal" style="
         display: none;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.7);
+        background: rgba(0,0,0,0.8);
         z-index: 1000;
         justify-content: center;
         align-items: center;
+        padding: 20px;
     ">
         <div style="
             background: white;
             padding: 30px;
             border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
-            max-height: 80vh;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
             overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         ">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h3 id="modalTitle" style="color: var(--primary); margin: 0;"></h3>
+                <h2 id="modalTitle" style="color: var(--primary); margin: 0;"></h2>
                 <button onclick="closeModal()" style="
-                    background: none;
+                    background: var(--secondary);
+                    color: white;
                     border: none;
-                    font-size: 24px;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                    font-size: 20px;
                     cursor: pointer;
-                    color: #999;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 ">×</button>
             </div>
             
-            <div id="modalContent">
+            <div id="modalContent" style="line-height: 1.6;">
                 <!-- Контент загружается через JS -->
             </div>
             
-            <button onclick="closeModal()" style="
-                background: var(--primary);
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                border-radius: 5px;
-                cursor: pointer;
-                margin-top: 20px;
-                width: 100%;
-            ">
-                Закрыть
-            </button>
+            <div style="margin-top: 30px; display: flex; gap: 10px; flex-wrap: wrap;">
+                <button onclick="closeModal()" style="
+                    background: var(--primary);
+                    color: white;
+                    border: none;
+                    padding: 12px 25px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    flex: 1;
+                    min-width: 120px;
+                ">
+                    Закрыть
+                </button>
+                <button onclick="viewPhotos()" style="
+                    background: var(--accent);
+                    color: white;
+                    border: none;
+                    padding: 12px 25px;
+
+border-radius: 8px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    flex: 1;
+                    min-width: 120px;
+                ">
+                    📸 Фото приюта
+                </button>
+                <button onclick="visitWebsite()" style="
+                    background: var(--secondary);
+                    color: white;
+                    border: none;
+                    padding: 12px 25px;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    flex: 1;
+                    min-width: 120px;
+                ">
+                    🌐 Сайт приюта
+                </button>
+            </div>
         </div>
     </div>
     
     <script>
-        // ПОКАЗАТЬ ЗАГРУЗОЧНЫЙ ЭКРАН, ПОТОМ СКРЫТЬ
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.getElementById('loader').style.display = 'none';
-                // Показываем карточки с анимацией
-                const cards = document.querySelectorAll('.card');
-                cards.forEach((card, i) => {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(10px)';
-                    
-                    setTimeout(() => {
-                        card.style.transition = 'opacity 0.3s, transform 0.3s';
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, i * 30);
-                });
-            }, 500); // Минимальная задержка для эффекта
-        });
+        // ПЕРЕМЕННЫЕ ДЛЯ ТЕКУЩЕГО ПРИЮТА
+        let currentShelter = null;
         
-        // ДАННЫЕ О ПРИЮТАХ (УПРОЩЕННЫЕ)
-        const sheltersData = {
-            'Доброе сердце': {
-                city: 'Краснодар',
-                phone: '+7 (861) 123-45-67',
-                address: 'ул. Красная, 123',
-                description: 'Крупнейший приют в Краснодарском крае. Площадь 5000 м², современные вольеры, собственный ветеринарный центр. Спасено более 3000 животных.',
-                facilities: ['Теплые вольеры', 'Ветеринарная клиника', 'Зона выгула', 'Обучение'],
-
-trust: ['Лицензия Минприроды', 'Регулярные проверки', 'Открытые дни', 'Отзывы на сайте']
-            },
-            'Краснодарский городской': {
-                city: 'Краснодар',
-                phone: '+7 (861) 234-56-78',
-                address: 'ул. Ставропольская, 45',
-                description: 'Муниципальный приют под патронажем администрации. Профессиональные кинологи, просторные территории.',
-                facilities: ['Муниципальный', 'Проф. кинологи', 'Адаптация', 'Экскурсии'],
-                trust: ['Гос. финансирование', 'Публичные отчеты', 'Проверки Роспотребнадзора']
-            },
-            'Лапки добра': {
-                city: 'Новороссийск',
-                phone: '+7 (8617) 456-78-90',
-                address: 'ул. Мира, 89',
-                description: 'Специализируется на кошках. Уютные домики, игровые комплексы, отдельный карантинный блок.',
-                facilities: ['Только кошки', 'Игровые комплексы', 'Карантинный блок', 'Груминг'],
-                trust: ['Специализация 10 лет', 'Сотрудничество с клиниками', 'Видеонаблюдение']
-            }
-        };
-        
-        // ПОКАЗАТЬ ИНФОРМАЦИЮ О ПРИЮТЕ
-        function showShelterInfo(name, city) {
-            const data = sheltersData[name] || {
-                city: city,
-                phone: 'Телефон указан на карточке',
-                address: 'Адрес указан на карточке',
-                description: 'Подробная информация об этом приюте готовится. Вы можете позвонить для уточнения деталей.',
-                facilities: ['Информация уточняется'],
-                trust: ['Все приюты проходят проверки']
-            };
+        // ПОКАЗАТЬ МОДАЛЬНОЕ ОКНО С ИНФОРМАЦИЕЙ О ПРИЮТЕ
+        function showShelterModal(name, city, phone, address) {
+            currentShelter = { name, city, phone, address };
             
             document.getElementById('modalTitle').textContent = Приют "${name}";
             
+            // Генерируем описание на основе города
+            let description = '';
+            let facilities = [];
+            let trustReasons = [];
+            
+            if (city === 'Краснодар') {
+                description = 'Крупный современный приют с профессиональным персоналом. Площадь более 3000 м², теплые вольеры, собственный ветеринарный кабинет.';
+                facilities = ['Теплые вольеры', 'Ветеринарный кабинет', 'Зона выгула', 'Обучение животных'];
+                trustReasons = ['Лицензия Минприроды', 'Регулярные проверки', 'Открытые дни для посещения'];
+            } else if (city === 'Сочи') {
+                description = 'Приют в горной местности с чистым воздухом. Специализируется на реабилитации животных после травм.';
+                facilities = ['Горный воздух', 'Реабилитационный центр', 'Прогулочные зоны', 'Экологичный подход'];
+                trustReasons = ['Сертификаты качества', 'Сотрудничество с клиниками', 'Прозрачная отчетность'];
+            } else if (city === 'Новороссийск') {
+                description = 'Приют у моря с просторными территориями. Особое внимание уделяется социализации животных.';
+                facilities = ['Морской климат', 'Просторные вольеры', 'Программы социализации', 'Дрессировка'];
+                trustReasons = ['Работает более 5 лет', 'Положительные отзывы', 'Видеонаблюдение 24/7'];
+            } else {
+                description = 'Качественный приют с заботливым персоналом. Все животные проходят ветеринарный осмотр и получают необходимый уход.';
+                facilities = ['Ветеринарный контроль', 'Чистые помещения', 'Сбалансированное питание', 'Индивидуальный подход'];
+                trustReasons = ['Все документы в порядке', 'Регулярные отчеты', 'Возможность посещения'];
+            }
+            
             document.getElementById('modalContent').innerHTML = 
-                <p><strong>📍 Город:</strong> ${data.city}</p>
-                <p><strong>🏠 Адрес:</strong> ${data.address}</p>
-                <p><strong>📞 Телефон:</strong> ${data.phone}</p>
+                <p><strong>📍 Город:</strong> ${city}</p>
+                <p><strong>🏠 Адрес:</strong> ${address}</p>
+                <p><strong>📞 Телефон:</strong> ${phone}</p>
                 
-                <div style="margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                <div style="margin: 20px 0; padding: 20px; background: #f8f9fa; border-radius: 10px;">
                     <p><strong>📋 Описание:</strong></p>
-                    <p>${data.description}</p>
+                    <p>${description}</p>
                 </div>
                 
                 <p><strong>✅ Условия содержания:</strong></p>
                 <div style="display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0 20px 0;">
-                    ${data.facilities.map(f => 
-                        <span style="background: #e3f2fd; padding: 6px 12px; border-radius: 15px; font-size: 14px;">${f}</span>
-                    ).join('')}
+                    ${facilities.map(f => 
+                        <span style="background: #e3f2fd; padding: 8px 15px; border-radius: 20px; font-size: 14px;">${f}</span>
+
+).join('')}
                 </div>
                 
-                <p><strong>👍 Почему можно доверять:</strong></p>
+                <p><strong>👍 Почему можно доверять этому приюту:</strong></p>
                 <ul style="padding-left: 20px; margin-bottom: 20px;">
-                    ${data.trust.map(t => <li>${t}</li>`).join('')}
+                    ${trustReasons.map(r => <li>${r}</li>).join('')}
                 </ul>
                 
-                <div style="text-align: center; margin: 20px 0;">
-                    <button onclick="alert('Фото загружаются...')" style="
-                        background: var(--secondary);
-                        color: white;
-                        border: none;
-                        padding: 10px 20px;
-                        border-radius: 5px;
-                        cursor: pointer;
-                        margin: 0 5px;
-                    ">
-                        📸 Посмотреть фото
-                    </button>
-                    <button onclick="alert('Переход на сайт...')" style="
-                        background: var(--primary);
-                        color: white;
-                        border: none;
-                        padding: 10px 20px;
-                        border-radius: 5px;
-                        cursor: pointer;
-
-margin: 0 5px;
-                    ">
-                        🌐 Официальный сайт
-                    </button>
+                <div style="background: #fff8e1; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                    <p><strong>💡 Для доверия приюту важно:</strong></p>
+                    <p>• Посетить приют лично</p>
+                    <p>• Посмотреть условия содержания</p>
+                    <p>• Пообщаться с персоналом</p>
+                    <p>• Узнать о программах помощи</p>
                 </div>
-            `;
+            ;
             
-            document.getElementById('modal').style.display = 'flex';
+            document.getElementById('shelterModal').style.display = 'flex';
         }
         
         // ЗАКРЫТЬ МОДАЛЬНОЕ ОКНО
         function closeModal() {
-            document.getElementById('modal').style.display = 'none';
+            document.getElementById('shelterModal').style.display = 'none';
+            currentShelter = null;
+        }
+        
+        // ПОСМОТРЕТЬ ФОТО ПРИЮТА
+        function viewPhotos() {
+            if (currentShelter) {
+                alert('Фотографии приюта "' + currentShelter.name + '":\n\n' +
+                      '• Территория приюта\n' +
+                      '• Вольеры и помещения\n' + 
+                      '• Животные в приюте\n' +
+                      '• Персонал за работой\n\n' +
+                      'На реальном сайте будут реальные фото!');
+            }
+        }
+        
+        // ПЕРЕЙТИ НА САЙТ ПРИЮТА
+        function visitWebsite() {
+            if (currentShelter) {
+                alert('Официальный сайт приюта "' + currentShelter.name + '"\n\n' +
+                      'В реальной версии здесь будет ссылка на сайт приюта.\n' +
+                      'На сайте можно увидеть:\n' +
+                      '• Актуальные фото животных\n' +
+                      '• Отзывы и рекомендации\n' +
+                      '• Новости приюта\n' +
+                      '• Способы помощи');
+            }
         }
         
         // ПРОКРУТКА К ПРИЮТАМ
@@ -605,25 +604,49 @@ margin: 0 5px;
         }
         
         // ОБРАБОТКА ТЕЛЕФОНОВ
-        document.addEventListener('click', function(e) {
-            if (e.target.classList.contains('phone')) {
-                e.preventDefault();
-                e.stopPropagation();
-                const number = e.target.textContent.replace(/[^\d+()\s-]/g, '');
-                alert('Телефон для связи:\\n' + number.trim());
-            }
-        });
-        
-        // ЗАКРЫТЬ МОДАЛКУ ПРИ КЛИКЕ ВНЕ ЕЕ
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Телефоны в карточках
+            document.querySelectorAll('.phone').forEach(phone => {
+                phone.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Останавливаем всплытие
+                    const number = this.textContent.replace(/[^\d+()\s-]/g, '');
+                    alert('Телефон для связи:\n' + number.trim());
+                });
+            });
+            
+            // Закрыть модалку при клике вне ее
+            document.getElementById('shelterModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+            
+            // Закрыть модалку при нажатии Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+            
+            // Анимация появления карточек
+            setTimeout(() => {
+                const cards = document.querySelectorAll('.card');
+                cards.forEach((card, i) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.5s, transform 0.5s';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, i * 50);
+                });
+            }, 100);
         });
     </script>
 </body>
 </html>'''
 
 # Сохраняем файл
-with open("shelter_ultra_fast.html", "w", encoding="utf-8") as f:
+with open("shelter_fixed.html", "w", encoding="utf-8") as f:
     f.write(html)
