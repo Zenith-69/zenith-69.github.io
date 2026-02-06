@@ -90,16 +90,44 @@
             margin: 50px 0;
         }
         
-        .animal-img {
+        .animal-card {
             height: 200px;
             background-size: cover;
             background-position: center;
             border-radius: 15px;
             transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
         }
         
-        .animal-img:hover {
+        .animal-card:hover {
             transform: scale(1.05);
+        }
+        
+        .animal-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7) 100%);
+            border-radius: 15px;
+        }
+        
+        .animal-card span {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+
+z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
         /* ОСТАЛЬНЫЕ СТИЛИ С УЛУЧШЕНИЯМИ */
@@ -121,9 +149,8 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.1);
             margin: 25px 0; 
-            padding: 35px;
-
-border-radius: 20px; 
+            padding: 35px; 
+            border-radius: 20px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: all 0.4s;
             cursor: pointer;
@@ -240,18 +267,18 @@ border-radius: 20px;
     <div class="header">
         <div class="header-content">
             <div class="animals" style="font-size: 50px; margin: 20px 0;">🐕 🐈 🐇 🐦 🐾 🦔</div>
-            <h1 style="font-size: 3em; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+
+<h1 style="font-size: 3em; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
                 ПРИЮТЫ ЖИВОТНЫХ КРАСНОДАРСКОГО КРАЯ
             </h1>
-            <p style="font-size: 1.2em; opacity: 0.9;">Школьный проект | Помощь бездомным животным</p>
+            <p style="font-size: 1.2em; opacity: 0.9;">Школьный проект | Помощь бездомным животным | Стиль 2026</p>
             
             <!-- ЦИТАТА -->
             <div class="quote">
                 <i class="fas fa-quote-left" style="color: var(--accent); margin-right: 10px;"></i>
                 "Спасение одной жизни может не изменить мир, но наверняка изменит мир для этой одной жизни"
                 <i class="fas fa-quote-right" style="color: var(--accent); margin-left: 10px;"></i>
-
-<div style="text-align: right; margin-top: 10px; font-size: 0.9em;">— Неизвестный автор</div>
+                <div style="text-align: right; margin-top: 10px; font-size: 0.9em;">— Неизвестный автор</div>
             </div>
             
             <!-- ПРИЗЫВ К ДЕЙСТВИЮ -->
@@ -261,7 +288,7 @@ border-radius: 20px;
                     Каждое животное заслуживает любви, заботы и теплого дома. 
                     Ваше участие может спасти жизнь и подарить счастье.
                 </p>
-                <button style="
+                <button onclick="window.open('https://www.rfpal.ru/', '_blank')" style="
                     background: white; 
                     color: var(--dark); 
                     border: none; 
@@ -279,17 +306,28 @@ border-radius: 20px;
         </div>
     </div>
     
-    <!-- ГАЛЕРЕЯ ЖИВОТНЫХ -->
+    <!-- ГАЛЕРЕЯ ЖИВОТНЫХ С ССЫЛКАМИ НА САЙТЫ -->
     <div class="content">
         <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 40px; color: var(--secondary);">
             <i class="fas fa-heart" style="color: var(--accent);"></i> НАШИ ПУШИСТЫЕ ДРУЗЬЯ
         </h2>
         
         <div class="animals-gallery">
-            <div class="animal-img" style="background-image: url('https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
-            <div class="animal-img" style="background-image: url('https://images.unsplash.com/photo-1514888286974-6d03bdeacba8?ixlib=rb-1.2.1&auto=format&fit=crop&w-800&q=80');"></div>
-            <div class="animal-img" style="background-image: url('https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
-            <div class="animal-img" style="background-image: url('https://images.unsplash.com/photo-1557008075-7f2c5efa4cfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+            <a href="https://www.rfpal.ru/" target="_blank" class="animal-card" style="background-image: url('https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                <span>🐕 Собаки ждут дома</span>
+            </a>
+            
+            <a href="https://www.moscowzoo.ru/" target="_blank" class="animal-card" style="background-image: url('https://images.unsplash.com/photo-1514888286974-6d03bdeacba8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                <span>🐈 Кошки ищут любовь</span>
+            </a>
+            
+            <a href="https://animalprotect.org/" target="_blank" class="animal-card" style="background-image: url('https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                <span>🐇 Мелкие животные</span>
+            </a>
+            
+            <a href="shelter_detailed.html" target="_blank" class="animal-card" style="background-image: url('https://images.unsplash.com/photo-1557008075-7f2c5efa4cfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                <span>🏠 Подробнее о приютах</span>
+            </a>
         </div>
         
         <!-- СТАТИСТИКА -->
@@ -297,7 +335,8 @@ border-radius: 20px;
             <div class="stat-item">
                 <span class="stat-number">20+</span>
                 <span>приютов в крае</span>
-            </div>
+
+</div>
             <div class="stat-item">
                 <span class="stat-number">500+</span>
                 <span>спасенных животных</span>
@@ -318,21 +357,20 @@ border-radius: 20px;
         
         <!-- КАРТОЧКИ ПРИЮТОВ С ССЫЛКАМИ -->
         <div class="shelter-grid">
-            <a href="#shelter1" class="card-link" onclick="showShelterDetail(1)">
+            <a href="https://dobroe-serdce.ru" target="_blank" class="card-link">
                 <div class="card">
                     <h2><span class="animal-icon">🐕</span> Приют "Доброе сердце"</h2>
                     <p><strong>📍 Город:</strong> Краснодар</p>
                     <p><strong>🏠 Адрес:</strong> ул. Красная, 123</p>
                     <p><strong>📝 Описание:</strong> Крупнейший приют для собак и кошек. Современный ветеринарный кабинет, теплые вольеры.</p>
-
-<div class="phone">📞 +7 (861) 123-45-67</div>
+                    <div class="phone">📞 +7 (861) 123-45-67</div>
                     <div class="more-info">
-                        <i class="fas fa-external-link-alt"></i> Подробнее о приюте и фото →
+                        <i class="fas fa-external-link-alt"></i> Официальный сайт приюта →
                     </div>
                 </div>
             </a>
             
-            <a href="#shelter2" class="card-link" onclick="showShelterDetail(2)">
+            <a href="https://krasnodar-shelter.ru" target="_blank" class="card-link">
                 <div class="card">
                     <h2><span class="animal-icon">🏢</span> Краснодарский городской приют</h2>
                     <p><strong>📍 Город:</strong> Краснодар</p>
@@ -340,12 +378,12 @@ border-radius: 20px;
                     <p><strong>📝 Описание:</strong> Муниципальный приют. Просторные территории, профессиональные кинологи.</p>
                     <div class="phone">📞 +7 (861) 234-56-78</div>
                     <div class="more-info">
-                        <i class="fas fa-external-link-alt"></i> Посмотреть условия содержания →
+                        <i class="fas fa-external-link-alt"></i> Официальный сайт →
                     </div>
                 </div>
             </a>
             
-            <a href="#shelter3" class="card-link" onclick="showShelterDetail(3)">
+            <a href="https://lapki-dobra.ru" target="_blank" class="card-link">
                 <div class="card">
                     <h2><span class="animal-icon">🐈</span> "Лапки добра"</h2>
                     <p><strong>📍 Город:</strong> Новороссийск</p>
@@ -353,12 +391,12 @@ border-radius: 20px;
                     <p><strong>📝 Описание:</strong> Специализируется на кошках. Уютные домики, игровые комплексы.</p>
                     <div class="phone">📞 +7 (8617) 345-67-89</div>
                     <div class="more-info">
-                        <i class="fas fa-external-link-alt"></i> Галерея котиков и условия →
+                        <i class="fas fa-external-link-alt"></i> Сайт приюта →
                     </div>
                 </div>
             </a>
             
-            <a href="#shelter4" class="card-link" onclick="showShelterDetail(4)">
+            <a href="https://nadezhda-sochi.ru" target="_blank" class="card-link">
                 <div class="card">
                     <h2><span class="animal-icon">🏔️</span> Приют "Надежда" в Сочи</h2>
                     <p><strong>📍 Город:</strong> Сочи</p>
@@ -366,13 +404,13 @@ border-radius: 20px;
                     <p><strong>📝 Описание:</strong> Работает с 2010 года на пожертвования. Горный воздух, экологичный подход.</p>
                     <div class="phone">📞 +7 (862) 456-78-90</div>
                     <div class="more-info">
-                        <i class="fas fa-external-link-alt"></i> Фото территории и вольеров →
+                        <i class="fas fa-external-link-alt"></i> Официальный сайт →
                     </div>
                 </div>
             </a>
         </div>
-        
-        <!-- ДЕТАЛЬНАЯ ИНФОРМАЦИЯ О ПРИЮТЕ (ПОЯВЛЯЕТСЯ ПРИ КЛИКЕ) -->
+
+<!-- ДЕТАЛЬНАЯ ИНФОРМАЦИЯ О ПРИЮТЕ (ПОЯВЛЯЕТСЯ ПРИ КЛИКЕ) -->
         <div id="shelterDetail" style="display: none; margin-top: 60px; padding: 40px; background: rgba(0,0,0,0.3); border-radius: 20px;">
             <button onclick="hideShelterDetail()" style="
                 background: var(--accent); 
@@ -394,134 +432,32 @@ border-radius: 20px;
             <div class="phone" style="border-color: var(--accent);">🚑 Ветеринарная помощь (круглосуточно): +7 (861) 111-22-33</div>
             <div class="phone" style="border-color: var(--accent);">📞 Служба отлова животных: +7 (861) 222-33-44</div>
             <div class="phone" style="border-color: var(--accent);"><i class="fas fa-hands-helping"></i> Консультация по животным: +7 (861) 333-44-55</div>
-
-</div>
+        </div>
     </div>
     
     <!-- ПОДВАЛ -->
     <div class="footer">
         <div style="font-size: 40px; margin: 15px 0; color: var(--secondary);">🐾 🐕 🐈 🐇 🐦 🦔 🐾</div>
-        <h3>ШКОЛЬНЫЙ ПРОЕКТ 2026 года <3</h3>
-        <p>Сайт создан учеником 9 "А" класса</p>
-        <p>Использованы технологии: Python, HTML, CSS</p>
+        <h3>ШКОЛЬНЫЙ ПРОЕКТ 2026</h3>
+        <p>Сайт создан учеником "А" класса</p>
+        <p>Использованы технологии: Python, HTML, CSS, JavaScript</p>
+        <p>Стиль: Modern Web 2026 | Градиенты | Анимации | Glassmorphism</p>
+        <p>© 2026 Все права защищены</p>
         <div style="margin-top: 30px; font-size: 14px; opacity: 0.7;">
             <p>Контакты указаны для примера. Актуальные телефоны уточняйте на сайтах приютов.</p>
+            <p>Фотографии животных: Unsplash | Иконки: Font Awesome</p>
+            <p>Официальные сайты приютов: <a href="https://www.rfpal.ru/" style="color: var(--secondary);" target="_blank">РФПА</a> | 
+            <a href="https://www.moscowzoo.ru/" style="color: var(--secondary);" target="_blank">Московский зоопарк</a></p>
         </div>
     </div>
     
     <script>
-        // ДАННЫЕ ДЛЯ ПОДРОБНЫХ СТРАНИЦ ПРИЮТОВ
-        const shelters = {
-            1: {
-                name: "Приют 'Доброе сердце'",
-                city: "Краснодар",
-                address: "ул. Красная, 123",
-                phone: "+7 (861) 123-45-67",
-                description: "Крупнейший приют в Краснодарском крае площадью 5000 м². Современные вольеры с подогревом, собственный ветеринарный центр, зона выгула и тренировок. Приют существует с 2005 года, спасено более 3000 животных.",
-                images: [
-                    "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                ],
-                facilities: ["✅ Теплые вольеры", "✅ Ветеринарная клиника", "✅ Зона выгула", "✅ Обучение собак", "✅ Волонтерские программы"],
-                website: "https://example-shelter1.ru"
-            },
-            2: {
-                name: "Краснодарский городской приют",
-                city: "Краснодар", 
-                address: "ул. Ставропольская, 45",
-                phone: "+7 (861) 234-56-78",
-                description: "Муниципальный приют под патронажем администрации города. Профессиональные кинологи, просторные территории, программа социальной адаптации животных. Ежегодно более 500 животных находят здесь новый дом.",
-                images: [
-                    "https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-                    "https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                ],
-                facilities: ["✅ Муниципальное финансирование", "✅ Профессиональные кинологи", "✅ Программа адаптации", "✅ Экскурсии для школьников", "✅ Партнерство с ветклиниками"],
-                website: "https://krasnodar-shelter.ru"
-            }
-        };
-        
-        // ПОКАЗАТЬ ДЕТАЛИ ПРИЮТА
-        function showShelterDetail(id) {
-            const shelter = shelters[id];
-            if (!shelter) return;
-            
-            document.getElementById('shelterDetail').style.display = 'block';
-            document.getElementById('detailContent').innerHTML = `
-                <h2 style="color: var(--secondary); font-size: 2em; margin-bottom: 20px;">${shelter.name}</h2>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0;">
-                    <div>
-                        <h3 style="color: var(--accent);"><i class="fas fa-info-circle"></i> Информация</h3>
-                        <p><strong>📍 Город:</strong> ${shelter.city}</p>
-                        <p><strong>🏠 Адрес:</strong> ${shelter.address}</p>
-
-<p><strong>📞 Телефон:</strong> ${shelter.phone}</p>
-                        
-                        <h3 style="color: var(--accent); margin-top: 30px;"><i class="fas fa-check-circle"></i> Условия содержания</h3>
-                        <ul style="list-style: none; padding: 0;">
-                            ${shelter.facilities.map(f => <li style="margin: 10px 0;"><i class="fas fa-paw" style="color: var(--secondary);"></i> ${f}</li>).join('')}
-                        </ul>
-                        
-                        <a href="${shelter.website}" target="_blank" style="
-                            display: inline-block;
-                            background: var(--gradient);
-                            color: white;
-                            padding: 15px 30px;
-                            border-radius: 10px;
-                            text-decoration: none;
-                            font-weight: bold;
-                            margin-top: 20px;
-                        ">
-                            <i class="fas fa-external-link-alt"></i> Официальный сайт приюта
-                        </a>
-                    </div>
-                    
-                    <div>
-                        <h3 style="color: var(--accent);"><i class="fas fa-images"></i> Галерея приюта</h3>
-                        <p>Посмотрите, в каких комфортных условиях живут наши подопечные:</p>
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px;">
-                            ${shelter.images.map(img => 
-                                <div style="
-                                    height: 150px;
-                                    background-image: url('${img}');
-                                    background-size: cover;
-                                    background-position: center;
-                                    border-radius: 10px;
-                                    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-                                "></div>
-                            ).join('')}
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; margin-top: 30px;">
-                    <h3 style="color: var(--accent);"><i class="fas fa-file-alt"></i> Подробное описание</h3>
-                    <p>${shelter.description}</p>
-                    <p style="margin-top: 20px; font-style: italic;">
-                        <i class="fas fa-shield-alt" style="color: var(--secondary);"></i> 
-                        Все приюты проходят регулярные проверки и имеют необходимые лицензии. 
-                        Доверьте спасение животного профессионалам!
-                    </p>
-                </div>
-            `;
-            
-            // Плавная прокрутка к деталям
-            document.getElementById('shelterDetail').scrollIntoView({ behavior: 'smooth' });
-        }
-        
-        // СКРЫТЬ ДЕТАЛИ
-        function hideShelterDetail() {
-            document.getElementById('shelterDetail').style.display = 'none';
-        }
-        
         // СТАРЫЙ КОД ДЛЯ ТЕЛЕФОНОВ
         document.querySelectorAll('.phone').forEach(phone => {
             phone.addEventListener('click', function(e) {
                 e.stopPropagation();
                 const number = this.textContent.replace(/[^\d+()\s-]/g, '');
-                alert('Телефон для связи:\\n' + number.trim() + '\\n\\nСкопируйте номер и позвоните!');
+                alert('Телефон для связи:\n' + number.trim() + '\n\nСкопируйте номер и позвоните!');
             });
         });
         
@@ -529,8 +465,7 @@ border-radius: 20px;
         window.addEventListener('load', function() {
             document.querySelectorAll('.card').forEach((card, index) => {
                 card.style.opacity = '0';
-
-card.style.transform = 'translateY(30px)';
+                card.style.transform = 'translateY(30px)';
                 
                 setTimeout(() => {
                     card.style.transition = 'opacity 0.8s, transform 0.8s';
