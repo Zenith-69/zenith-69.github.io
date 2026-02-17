@@ -1,39 +1,47 @@
+Vyacheslav, [18.02.2026 0:19]
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Приюты животных Краснодарского края - Помощь и забота</title>
+    <!-- Оптимизированные стили без лишнего -->
     <style>
-        /* НОВЫЙ СТИЛЬ 2026 ГОДА */
+        /* БАЗОВЫЙ СТИЛЬ 2026 - ОПТИМИЗИРОВАНО */
         :root {
-            --primary: #7B68EE;    /* Модный фиолетовый */
-            --secondary: #00CED1;   /* Бирюзовый */
-            --accent: #FF6B8B;      /* Розовый акцент */
-            --dark: #2C2C54;        /* Темный фон */
-            --light: #F8F9FA;       /* Светлый */
+            --primary: #7B68EE;
+            --secondary: #00CED1;
+            --accent: #FF6B8B;
+            --dark: #2C2C54;
+            --light: #F8F9FA;
             --gradient: linear-gradient(135deg, #7B68EE, #00CED1);
         }
         
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            color: white;
-            margin: 0; 
-            padding: 0; 
-            line-height: 1.6;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        /* НОВЫЙ ХЕДЕР С ЭФФЕКТОМ */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        /* Ускоренная анимация */
         .header { 
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+                        url('https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=800&q=80&auto=format');
             background-size: cover;
             background-position: center;
             color: white; 
-            padding: 80px 20px; 
+            padding: 60px 20px; 
             text-align: center; 
             position: relative;
-            overflow: hidden;
+            will-change: transform;
         }
         
         .header::before {
@@ -45,7 +53,6 @@
             bottom: 0;
             background: var(--gradient);
             opacity: 0.3;
-            z-index: 0;
         }
         
         .header-content {
@@ -56,378 +63,288 @@
         }
         
         .quote {
-            font-size: 24px;
-            font-style: italic;
-            margin: 40px auto;
-            padding: 30px;
+            font-size: 22px;
+            margin: 30px auto;
+            padding: 25px;
             background: rgba(255,255,255,0.1);
             border-left: 5px solid var(--accent);
             border-radius: 10px;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
             max-width: 700px;
         }
         
         .call-to-action {
             background: var(--gradient);
-            padding: 40px;
-            margin: 50px 0;
+            padding: 30px;
+            margin: 40px 0;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(123, 104, 238, 0.3);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
+            box-shadow: 0 10px 25px rgba(123, 104, 238, 0.3);
         }
         
         .animals-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 50px 0;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 40px 0;
         }
         
-        .animal-card {
-            height: 200px;
+        .animal-img {
+            height: 180px;
             background-size: cover;
             background-position: center;
             border-radius: 15px;
-            transition: transform 0.3s;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
+            transition: transform 0.2s;
+            will-change: transform;
         }
         
-        .animal-card:hover {
-            transform: scale(1.05);
+        .animal-img:hover {
+            transform: scale(1.03);
         }
         
-        .animal-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7) 100%);
-            border-radius: 15px;
-        }
-        
-        .animal-card span {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2em;
-
-z-index: 2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        /* ОСТАЛЬНЫЕ СТИЛИ С УЛУЧШЕНИЯМИ */
         .content { 
             max-width: 1400px; 
             margin: 0 auto; 
-            padding: 40px 20px; 
+            padding: 30px 20px; 
         }
         
         .shelter-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
         
         .card { 
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
             border: 1px solid rgba(255,255,255,0.1);
-            margin: 25px 0; 
-            padding: 35px; 
+            padding: 30px;
             border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: all 0.4s;
-            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
             position: relative;
             overflow: hidden;
         }
         
         .card::before {
             content: '';
-            position: absolute;
+
+Vyacheslav, [18.02.2026 0:19]
+position: absolute;
             top: 0;
             left: 0;
-            width: 5px;
+            width: 4px;
             height: 100%;
             background: var(--gradient);
         }
         
         .card:hover { 
-            transform: translateY(-10px) scale(1.02); 
-            box-shadow: 0 20px 40px rgba(123, 104, 238, 0.4);
-            background: rgba(255,255,255,0.1);
-        }
-        
-        .card-link {
-            display: block;
-            text-decoration: none;
-            color: inherit;
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 30px rgba(123, 104, 238, 0.3);
+            background: rgba(255,255,255,0.08);
         }
         
         .phone { 
             background: rgba(255,255,255,0.1);
-            padding: 20px; 
-            border-radius: 12px;
-            margin: 25px 0; 
-            font-size: 22px; 
+            padding: 15px; 
+            border-radius: 10px;
+            margin: 20px 0; 
+            font-size: 20px; 
             font-weight: bold; 
             color: #00CED1;
-            border: 2px solid rgba(0,206,209,0.3);
-            transition: all 0.3s;
+            border: 2px solid rgba(0,206,209,0.2);
+            transition: all 0.2s;
+            cursor: pointer;
         }
         
         .phone:hover {
             background: rgba(0,206,209,0.1);
-            transform: scale(1.03);
-            cursor: pointer;
         }
         
         .animal-icon {
-            font-size: 32px;
-            margin-right: 15px;
+            font-size: 28px;
+            margin-right: 10px;
             vertical-align: middle;
-        }
-        
-        .more-info {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 15px;
-            font-size: 16px;
-        }
-        
-        .more-info:hover {
-            text-decoration: underline;
-        }
-        
-        .footer { 
-            background: rgba(0,0,0,0.8);
-            color: white; 
-            text-align: center; 
-            padding: 60px 20px; 
-            margin-top: 80px;
-            border-top: 5px solid var(--accent);
         }
         
         .stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
             text-align: center;
         }
         
         .stat-item {
             background: rgba(255,255,255,0.05);
-            padding: 30px;
+            padding: 25px;
             border-radius: 15px;
         }
         
         .stat-number {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: bold;
             color: var(--secondary);
             display: block;
         }
         
+        .footer { 
+            background: rgba(0,0,0,0.9);
+            color: white; 
+            text-align: center; 
+            padding: 40px 20px; 
+            margin-top: 60px;
+            border-top: 4px solid var(--accent);
+        }
+        
+        /* Медиа-запросы для мобильных */
         @media (max-width: 768px) {
-            .shelter-grid {
-                grid-template-columns: 1fr;
-            }
-            .header {
-                padding: 50px 20px;
-            }
-            .quote {
-                font-size: 20px;
-                padding: 20px;
-            }
+            .header { padding: 40px 15px; }
+            .quote { font-size: 18px; padding: 15px; }
+            h1 { font-size: 2em !important; }
+            .shelter-grid { grid-template-columns: 1fr; }
+        }
+        
+        /* Ленивая загрузка изображений */
+        img {
+            loading: lazy;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Оптимизированная загрузка Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 </head>
 <body>
-    <!-- НОВЫЙ ХЕДЕР С ЦИТАТОЙ И ПРИЗЫВОМ -->
     <div class="header">
         <div class="header-content">
-            <div class="animals" style="font-size: 50px; margin: 20px 0;">🐕 🐈 🐇 🐦 🐾 🦔</div>
-
-<h1 style="font-size: 3em; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+            <div class="animals" style="font-size: 45px; margin: 15px 0;">🐕 🐈 🐇 🐦 🐾</div>
+            <h1 style="font-size: 2.8em; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
                 ПРИЮТЫ ЖИВОТНЫХ КРАСНОДАРСКОГО КРАЯ
             </h1>
-            <p style="font-size: 1.2em; opacity: 0.9;">Школьный проект | Помощь бездомным животным | Стиль 2026</p>
+            <p style="font-size: 1.1em; opacity: 0.9;">Школьный проект | Помощь бездомным животным</p>
             
-            <!-- ЦИТАТА -->
             <div class="quote">
-                <i class="fas fa-quote-left" style="color: var(--accent); margin-right: 10px;"></i>
+                <i class="fas fa-quote-left" style="color: var(--accent); margin-right: 8px;"></i>
                 "Спасение одной жизни может не изменить мир, но наверняка изменит мир для этой одной жизни"
-                <i class="fas fa-quote-right" style="color: var(--accent); margin-left: 10px;"></i>
-                <div style="text-align: right; margin-top: 10px; font-size: 0.9em;">— Неизвестный автор</div>
+                <i class="fas fa-quote-right" style="color: var(--accent); margin-left: 8px;"></i>
+                <div style="text-align: right; margin-top: 8px; font-size: 0.9em;">— Неизвестный автор</div>
             </div>
             
-            <!-- ПРИЗЫВ К ДЕЙСТВИЮ -->
             <div class="call-to-action">
-                <h2 style="margin: 0 0 20px 0; font-size: 2em;">ДАВАЙТЕ МЕНЯТЬ МИР ВМЕСТЕ!</h2>
-                <p style="font-size: 1.2em; margin-bottom: 30px;">
-                    Каждое животное заслуживает любви, заботы и теплого дома. 
-                    Ваше участие может спасти жизнь и подарить счастье.
+                <h2 style="margin: 0 0 15px 0; font-size: 1.8em;">ДАВАЙТЕ МЕНЯТЬ МИР ВМЕСТЕ!</h2>
+                <p style="font-size: 1.1em; margin-bottom: 25px;">
+                    Каждое животное заслуживает любви, заботы и теплого дома.
                 </p>
-                <button onclick="window.open('https://www.rfpal.ru/', '_blank')" style="
+                <button style="
                     background: white; 
                     color: var(--dark); 
                     border: none; 
-                    padding: 15px 40px; 
-                    font-size: 18px; 
+                    padding: 12px 35px;
+
+Vyacheslav, [18.02.2026 0:19]
+font-size: 16px; 
                     border-radius: 50px; 
                     font-weight: bold;
                     cursor: pointer;
-                    transition: all 0.3s;
-                " onmouseover="this.style.transform='scale(1.1)'; this.style.background='var(--accent)'; this.style.color='white'"
-                   onmouseout="this.style.transform='scale(1)'; this.style.background='white'; this.style.color='var(--dark)'">
+                    transition: 0.2s;
+                " onmouseover="this.style.background='var(--accent)'; this.style.color='white'"
+                   onmouseout="this.style.background='white'; this.style.color='var(--dark)'">
                     🐾 СТАНЬ ГЕРОЕМ СЕГОДНЯ!
                 </button>
             </div>
         </div>
     </div>
     
-    <!-- ГАЛЕРЕЯ ЖИВОТНЫХ С ССЫЛКАМИ НА САЙТЫ -->
     <div class="content">
-        <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 40px; color: var(--secondary);">
+        <h2 style="text-align: center; font-size: 2.2em; margin-bottom: 30px; color: var(--secondary);">
             <i class="fas fa-heart" style="color: var(--accent);"></i> НАШИ ПУШИСТЫЕ ДРУЗЬЯ
         </h2>
         
         <div class="animals-gallery">
-            <a href="https://www.rfpal.ru/" target="_blank" class="animal-card" style="background-image: url('https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-                <span>🐕 Собаки ждут дома</span>
-            </a>
-            
-            <a href="https://www.moscowzoo.ru/" target="_blank" class="animal-card" style="background-image: url('https://images.unsplash.com/photo-1514888286974-6d03bdeacba8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-                <span>🐈 Кошки ищут любовь</span>
-            </a>
-            
-            <a href="https://animalprotect.org/" target="_blank" class="animal-card" style="background-image: url('https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-                <span>🐇 Мелкие животные</span>
-            </a>
-            
-            <a href="shelter_detailed.html" target="_blank" class="animal-card" style="background-image: url('https://images.unsplash.com/photo-1557008075-7f2c5efa4cfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-                <span>🏠 Подробнее о приютах</span>
-            </a>
+            <div class="animal-img" style="background-image: url('https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=400&q=80&auto=format');"></div>
+            <div class="animal-img" style="background-image: url('https://images.unsplash.com/photo-1514888286974-6d03bdeacba8?w=400&q=80&auto=format');"></div>
+            <div class="animal-img" style="background-image: url('https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&q=80&auto=format');"></div>
+            <div class="animal-img" style="background-image: url('https://images.unsplash.com/photo-1557008075-7f2c5efa4cfd?w=400&q=80&auto=format');"></div>
         </div>
         
-        <!-- СТАТИСТИКА -->
         <div class="stats">
             <div class="stat-item">
-                <span class="stat-number">20+</span>
+                <span class="stat-number">25+</span>
                 <span>приютов в крае</span>
-
-</div>
+            </div>
             <div class="stat-item">
-                <span class="stat-number">500+</span>
+                <span class="stat-number">650+</span>
                 <span>спасенных животных</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">100+</span>
+                <span class="stat-number">150+</span>
                 <span>волонтеров помогают</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">85%</span>
+                <span class="stat-number">87%</span>
                 <span>находят новый дом</span>
             </div>
         </div>
         
-        <h2 style="text-align: center; font-size: 2.5em; margin: 80px 0 40px 0; color: var(--secondary);">
+        <h2 style="text-align: center; font-size: 2.2em; margin: 60px 0 30px 0; color: var(--secondary);">
             <i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> ПРИЮТЫ РЯДОМ С ВАМИ
         </h2>
         
-        <!-- КАРТОЧКИ ПРИЮТОВ С ССЫЛКАМИ -->
         <div class="shelter-grid">
-            <a href="https://dobroe-serdce.ru" target="_blank" class="card-link">
-                <div class="card">
-                    <h2><span class="animal-icon">🐕</span> Приют "Доброе сердце"</h2>
-                    <p><strong>📍 Город:</strong> Краснодар</p>
-                    <p><strong>🏠 Адрес:</strong> ул. Красная, 123</p>
-                    <p><strong>📝 Описание:</strong> Крупнейший приют для собак и кошек. Современный ветеринарный кабинет, теплые вольеры.</p>
-                    <div class="phone">📞 +7 (861) 123-45-67</div>
-                    <div class="more-info">
-                        <i class="fas fa-external-link-alt"></i> Официальный сайт приюта →
-                    </div>
-                </div>
-            </a>
+            <!-- Карточки без ссылок, просто информация -->
+            <div class="card">
+                <h2><span class="animal-icon">🐕</span> Приют "Доброе сердце"</h2>
+                <p><strong>📍 Город:</strong> Краснодар</p>
+                <p><strong>🏠 Адрес:</strong> ул. Красная, 123</p>
+                <p><strong>📝 Описание:</strong> Крупнейший приют для собак и кошек. Современный ветеринарный кабинет, теплые вольеры.</p>
+                <div class="phone">📞 +7 (861) 123-45-67</div>
+            </div>
             
-            <a href="https://krasnodar-shelter.ru" target="_blank" class="card-link">
-                <div class="card">
-                    <h2><span class="animal-icon">🏢</span> Краснодарский городской приют</h2>
-                    <p><strong>📍 Город:</strong> Краснодар</p>
-                    <p><strong>🏠 Адрес:</strong> ул. Ставропольская, 45</p>
-                    <p><strong>📝 Описание:</strong> Муниципальный приют. Просторные территории, профессиональные кинологи.</p>
-                    <div class="phone">📞 +7 (861) 234-56-78</div>
-                    <div class="more-info">
-                        <i class="fas fa-external-link-alt"></i> Официальный сайт →
-                    </div>
-                </div>
-            </a>
+            <div class="card">
+                <h2><span class="animal-icon">🏢</span> Краснодарский городской приют</h2>
+                <p><strong>📍 Город:</strong> Краснодар</p>
+                <p><strong>🏠 Адрес:</strong> ул. Ставропольская, 45</p>
+                <p><strong>📝 Описание:</strong> Муниципальный приют. Просторные территории, профессиональные кинологи.</p>
+                <div class="phone">📞 +7 (861) 234-56-78</div>
+            </div>
             
-            <a href="https://lapki-dobra.ru" target="_blank" class="card-link">
-                <div class="card">
-                    <h2><span class="animal-icon">🐈</span> "Лапки добра"</h2>
-                    <p><strong>📍 Город:</strong> Новороссийск</p>
-                    <p><strong>🏠 Адрес:</strong> ул. Мира, 89</p>
-                    <p><strong>📝 Описание:</strong> Специализируется на кошках. Уютные домики, игровые комплексы.</p>
-                    <div class="phone">📞 +7 (8617) 345-67-89</div>
-                    <div class="more-info">
-                        <i class="fas fa-external-link-alt"></i> Сайт приюта →
-                    </div>
-                </div>
-            </a>
-            
-            <a href="https://nadezhda-sochi.ru" target="_blank" class="card-link">
-                <div class="card">
-                    <h2><span class="animal-icon">🏔️</span> Приют "Надежда" в Сочи</h2>
-                    <p><strong>📍 Город:</strong> Сочи</p>
-                    <p><strong>🏠 Адрес:</strong> ул. Донская, 12</p>
-                    <p><strong>📝 Описание:</strong> Работает с 2010 года на пожертвования. Горный воздух, экологичный подход.</p>
-                    <div class="phone">📞 +7 (862) 456-78-90</div>
-                    <div class="more-info">
-                        <i class="fas fa-external-link-alt"></i> Официальный сайт →
-                    </div>
-                </div>
-            </a>
-        </div>
+            <div class="card">
+                <h2><span class="animal-icon">🐈</span> "Лапки добра"</h2>
+                <p><strong>📍 Город:</strong> Новороссийск</p>
+                <p><strong>🏠 Адрес:</strong> ул. Мира, 89</p>
+                <p><strong>📝 Описание:</strong> Специализируется на кошках. Уютные домики, игровые комплексы.</p>
+                <div class="phone">📞 +7 (8617) 345-67-89</div>
 
-<!-- ДЕТАЛЬНАЯ ИНФОРМАЦИЯ О ПРИЮТЕ (ПОЯВЛЯЕТСЯ ПРИ КЛИКЕ) -->
-        <div id="shelterDetail" style="display: none; margin-top: 60px; padding: 40px; background: rgba(0,0,0,0.3); border-radius: 20px;">
-            <button onclick="hideShelterDetail()" style="
-                background: var(--accent); 
-                color: white; 
-                border: none; 
-                padding: 10px 20px; 
-                border-radius: 5px; 
-                cursor: pointer;
-                margin-bottom: 20px;
-                font-size: 16px;
-            ">← Назад к списку</button>
+Vyacheslav, [18.02.2026 0:20]
+</div>
             
-            <div id="detailContent"></div>
+            <div class="card">
+                <h2><span class="animal-icon">🏔️</span> Приют "Надежда" в Сочи</h2>
+                <p><strong>📍 Город:</strong> Сочи</p>
+                <p><strong>🏠 Адрес:</strong> ул. Донская, 12</p>
+                <p><strong>📝 Описание:</strong> Работает с 2010 года на пожертвования. Горный воздух, экологичный подход.</p>
+                <div class="phone">📞 +7 (862) 456-78-90</div>
+            </div>
+            
+            <!-- НОВЫЕ 2 ПРИЮТА -->
+            <div class="card">
+                <h2><span class="animal-icon">🐕‍🦺</span> "Верный друг"</h2>
+                <p><strong>📍 Город:</strong> Геленджик</p>
+                <p><strong>🏠 Адрес:</strong> ул. Курортная, 156</p>
+                <p><strong>📝 Описание:</strong> Приют у моря. Специализация - крупные породы собак. Большие вольеры, ежедневные прогулки.</p>
+                <div class="phone">📞 +7 (86141) 5-67-89</div>
+            </div>
+            
+            <div class="card">
+                <h2><span class="animal-icon">🦮</span> "Анапа - город добра"</h2>
+                <p><strong>📍 Город:</strong> Анапа</p>
+                <p><strong>🏠 Адрес:</strong> Пионерский проспект, 234</p>
+                <p><strong>📝 Описание:</strong> Современный приют открытого типа. Своя ветклиника, зоогостиница, школа волонтеров.</p>
+                <div class="phone">📞 +7 (86133) 9-12-34</div>
+            </div>
         </div>
         
-        <!-- ЭКСТРЕННЫЕ СЛУЖБЫ -->
-        <div class="card" style="background: rgba(255,107,139,0.1); border: 1px solid rgba(255,107,139,0.3); margin-top: 60px;">
+        <div class="card" style="background: rgba(255,107,139,0.1); border: 1px solid rgba(255,107,139,0.3); margin-top: 40px;">
             <h2 style="color: var(--accent);"><i class="fas fa-ambulance"></i> 🚑 Экстренные службы</h2>
             <div class="phone" style="border-color: var(--accent);">🚑 Ветеринарная помощь (круглосуточно): +7 (861) 111-22-33</div>
             <div class="phone" style="border-color: var(--accent);">📞 Служба отлова животных: +7 (861) 222-33-44</div>
@@ -435,43 +352,36 @@ z-index: 2;
         </div>
     </div>
     
-    <!-- ПОДВАЛ -->
     <div class="footer">
-        <div style="font-size: 40px; margin: 15px 0; color: var(--secondary);">🐾 🐕 🐈 🐇 🐦 🦔 🐾</div>
+        <div style="font-size: 35px; margin: 10px 0; color: var(--secondary);">🐾 🐕 🐈 🐇 🐦 🐾</div>
         <h3>ШКОЛЬНЫЙ ПРОЕКТ 2026</h3>
         <p>Сайт создан учеником "А" класса</p>
-        <p>Использованы технологии: Python, HTML, CSS, JavaScript</p>
-        <p>Стиль: Modern Web 2026 | Градиенты | Анимации | Glassmorphism</p>
         <p>© 2026 Все права защищены</p>
-        <div style="margin-top: 30px; font-size: 14px; opacity: 0.7;">
+        <div style="margin-top: 20px; font-size: 13px; opacity: 0.7;">
             <p>Контакты указаны для примера. Актуальные телефоны уточняйте на сайтах приютов.</p>
-            <p>Фотографии животных: Unsplash | Иконки: Font Awesome</p>
-            <p>Официальные сайты приютов: <a href="https://www.rfpal.ru/" style="color: var(--secondary);" target="_blank">РФПА</a> | 
-            <a href="https://www.moscowzoo.ru/" style="color: var(--secondary);" target="_blank">Московский зоопарк</a></p>
         </div>
     </div>
     
     <script>
-        // СТАРЫЙ КОД ДЛЯ ТЕЛЕФОНОВ
+        // Минимальный JavaScript только для телефонов
         document.querySelectorAll('.phone').forEach(phone => {
             phone.addEventListener('click', function(e) {
                 e.stopPropagation();
-                const number = this.textContent.replace(/[^\d+()\s-]/g, '');
-                alert('Телефон для связи:\n' + number.trim() + '\n\nСкопируйте номер и позвоните!');
+                const number = this.textContent.replace(/[^0-9\s\(\)\+-]/g, '').trim();
+                alert('📞 Телефон: ' + number + '\n\nСкопируйте номер и позвоните!');
             });
         });
         
-        // АНИМАЦИЯ ПРИ ЗАГРУЗКЕ
+        // Простая анимация появления
         window.addEventListener('load', function() {
-            document.querySelectorAll('.card').forEach((card, index) => {
+            document.querySelectorAll('.card').forEach((card, i) => {
                 card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                
+                card.style.transform = 'translateY(20px)';
                 setTimeout(() => {
-                    card.style.transition = 'opacity 0.8s, transform 0.8s';
+                    card.style.transition = 'opacity 0.4s, transform 0.4s';
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
-                }, index * 100);
+                }, i * 50); // Быстрее
             });
         });
     </script>
